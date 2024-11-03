@@ -32,5 +32,28 @@ Ensure you have the following installed:
 
 ### Installation
 1. Clone the repository:
-   ```bash
+   ```node.js
    git clone <your-repo-url>
+2. Navigate into the project directory:
+   ```node.js
+   cd book-catalog
+3. Install dependencies:
+   ```node.js
+   npm install
+
+## Running the Application
+1. Start the development server:
+   ```node.js
+   npm run dev
+2. Open http://localhost:3000 in your browser to view the app.
+
+## Technologies Used
+- React: UI framework for building components and managing application state.
+- Vite: Development build tool for fast setup and hot reloading.
+- Tailwind CSS: Utility-first CSS framework for styling.
+- React Router: Routing library for managing navigation.
+- React Toastify: Provides toast notifications for action feedback.
+- LocalStorage: Persistent storage for saving book data between sessions.
+
+## Project Setup Notes
+Data is initially seeded from a books.json file and stored in localStorage. Any changes made (additions, updates, deletions) will persist through localStorage.
