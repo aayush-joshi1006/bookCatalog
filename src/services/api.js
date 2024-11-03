@@ -1,4 +1,4 @@
-import booksData from '../books.json'; // Adjust path if necessary
+import booksData from '../books.json'; 
 
 const STORAGE_KEY = 'booksCatalog';
 
@@ -39,7 +39,7 @@ export const addBook = async (book) => {
   saveBooksToStorage(books);
 
   return new Promise((resolve) => {
-    setTimeout(() => resolve(newBook), 200); // Return the added book with delay
+    setTimeout(() => resolve(newBook), 200); 
   });
 };
 
@@ -50,18 +50,18 @@ export const deleteBook = async (id) => {
   saveBooksToStorage(books);
 
   return new Promise((resolve) => {
-    setTimeout(() => resolve({ success: true }), 200); // Simulate success response
+    setTimeout(() => resolve({ success: true }), 200); 
   });
 };
 
 export const updateBook = async (book) => {
-  // Get current books from local storage
+ 
   const books = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
   
-  // Update the book
+  
   const updatedBooks = books.map(b => (b.id === book.id ? book : b));
 
   // Save the updated list back to local storage
   localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedBooks));
-  return book; // Return updated book if needed
+  return book; 
 };

@@ -11,7 +11,7 @@ const AddBookForm = () => {
   const [year, setYear] = useState('');
   const [error, setError] = useState('');
   
-  const navigate = useNavigate(); // Initialize the navigate function
+  const navigate = useNavigate(); 
 
   const handleSubmit = (e) => {
     e.preventDefault();

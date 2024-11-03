@@ -51,24 +51,7 @@ const EditBookForm = () => {
     }
   };
 
-  const handleDelete = async (e) => {
-    e.preventDefault(); // Prevent form submission when deleting
-    if (window.confirm("Are you sure you want to delete this book?")) {
-      try {
-        await deleteBook(id);
-        toast.info('Deleted Successfully', {
-          position: "top-right",
-          autoClose: 2000,
-          theme: "dark",
-        });
-        setTimeout(() => {
-          navigate('/');
-        }, 2000);
-      } catch (err) {
-        toast.error('Failed to delete book');
-      }
-    }
-  };
+
 
   return (
     <>
@@ -94,10 +77,7 @@ const EditBookForm = () => {
               <label htmlFor="year">Year:*</label>
               <input name='year' className='input_style w-full' placeholder="Year" value={year} onChange={(e) => setYear(e.target.value)} required />
             </div>
-            <div className='buttons flex mx-4 my-3 mt-5 gap-3 w-full'>
-              <button className='btn_Style w-full' onClick={handleDelete}>Delete</button>
-              <button className='btn_Style w-full' type="submit">Update</button>
-            </div>
+              <button className='btn_Style w-full my-4' type="submit">Update</button>
             {error && <p>{error}</p>}
           </form>
         </div>
